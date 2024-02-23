@@ -1,3 +1,6 @@
+// С помощью пакета uuid мы будем использовать v4, для уникальной id
+import {v4} from 'uuid';
+
 import './styles.css';
 
 function Homeworks20 (){
@@ -12,7 +15,9 @@ function Homeworks20 (){
     let position: string = isManager ? "Manager" : "Employee";
 
     return (
+      <div className='homeworks20-wrapper'>
         <div className="card">
+        <img src='https://wallpaperaccess.com/full/5673721.jpg' alt="Image" />
           <h2>{`${firstName} ${lastName}`}</h2>
           <p><strong>Job:</strong> {job}</p>
           <p><strong>Status:</strong> {position}</p>
@@ -21,11 +26,13 @@ function Homeworks20 (){
           <div>
             <strong>Programming Languages:</strong>
             <ul>
-              {programLangs.map((lang, index) => (
-                <li key={index}>{lang}</li>
-              ))}
+            {programLangs.map((lang: string) => {
+              const uniqueKey = v4();
+              return <li key={uniqueKey}>{lang}</li>;
+            })}
             </ul>
           </div>
+        </div>
         </div>
       ); 
 }
