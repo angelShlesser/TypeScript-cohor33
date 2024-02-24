@@ -1,4 +1,6 @@
-import "../../components/Counter/Counter";
+import Counter from "../../components/Counter/Counter";
+
+import { useState } from "react";
 
 function Lesson21() {
   // 6. null и undefined
@@ -112,8 +114,8 @@ function Lesson21() {
   const result = GameResult.Win;
   console.log("Game result:", result);
 
-  // 9. Типизация объектов: interface и type
-  // 9.1 interface
+  // 1. Типизация объектов: interface и type
+  // 10.1 interface
   interface User {
     name: string;
     age: number;
@@ -139,7 +141,7 @@ function Lesson21() {
     isManager: false,
   };
 
-  // 9.2 type
+  // 10.2 type
   type AnimalSkils = {
     name: string;
     color: string;
@@ -160,7 +162,7 @@ function Lesson21() {
     color: "red",
   };
 
-  // 10. или в ts
+  // 11. или в ts
 
   type CustomType = string | undefined | null;
   let someDataFromServer: CustomType = undefined;
@@ -168,7 +170,28 @@ function Lesson21() {
   someDataFromServer = null;
   //   someDataFromServer = 3; // будет ошибка
 
-  return <div>Lesson21: TypeScript is JavaScript</div>;
+  // Управление состоянием дочернего компонента родительского
+  // Создаем state для нашего Counter
+  const [count, setCount] = useState<number>(0);
+
+  // Создаем функцию, которая будет увеличивать наш count на 1
+  const onPlus = () => {
+    setCount((prevValue) => {
+      return prevValue + 1;
+    });
+  };
+
+  // Создаем функцию, которая будет уменьшать наш count на 1
+  const onMinus = () => {
+    setCount((prevValue) => prevValue - 1);
+  };
+
+  return (
+    <div>
+      Lesson21: TypeScript is JavaScript
+      <Counter count={count} onMinus={onMinus} onPlus={onPlus} />
+    </div>
+  );
 }
 
 export default Lesson21;
