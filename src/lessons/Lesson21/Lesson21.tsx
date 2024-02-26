@@ -175,16 +175,42 @@ function Lesson21() {
   const [count, setCount] = useState<number>(0);
 
   // Создаем функцию, которая будет увеличивать наш count на 1
-  const onPlus = () => {
+  const onPlus = (): void => {
     setCount((prevValue) => {
       return prevValue + 1;
     });
   };
 
   // Создаем функцию, которая будет уменьшать наш count на 1
-  const onMinus = () => {
+  const onMinus = (): void => {
     setCount((prevValue) => prevValue - 1);
   };
+  // Простой пример функции с дженериками
+  function identity<T>(arg: T): T {
+    return arg;
+  }
+
+  // Использование дженерика для указания явного типа
+  let result2: string = identity<string>("Hello");
+  console.log(result); // Вывод: Hello
+
+  // TypeScript также может выводить тип автоматически
+  let result3 = identity(42);
+  console.log(result3); // Вывод: 42
+
+  // Дженерик для массива, возвращающий первый элемент
+  function getFirstElement<T>(arr: T[]): T | undefined {
+    return arr.length > 0 ? arr[0] : undefined;
+  }
+
+  // Использование
+  let numbers = [1, 2, 3, 4, 5];
+  let firstNumber: number | undefined = getFirstElement(numbers);
+  console.log(firstNumber); // Вывод: 1
+
+  let names = ["John", "Jane", "Doe"];
+  let firstName: string | undefined = getFirstElement(names);
+  console.log(firstName); // Вывод: John
 
   return (
     <div>

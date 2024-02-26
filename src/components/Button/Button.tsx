@@ -1,11 +1,23 @@
-import "./styles.css";
+import { ButtonComponent } from "./styles";
+
 import { ButtonProps } from "./types";
-// Как тепехировать props
-function Button({ name, type = "button", onClick = () => {} }: ButtonProps) {
+
+// Как типизировать props
+function Button({
+  name,
+  isRed = false,
+  type = "button",
+  onClick = () => {},
+}: ButtonProps) {
   return (
-    <button className="button-component" onClick={onClick} type={type}>
+    <ButtonComponent
+      isRed={isRed}
+      className="button-component"
+      onClick={onClick}
+      type={type}
+    >
       {name}
-    </button>
+    </ButtonComponent>
   );
 }
 
