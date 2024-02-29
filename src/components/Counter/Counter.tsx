@@ -1,44 +1,19 @@
-import { useState } from "react";
-import { CounterProbs } from "./types";
+import Button from "components/Button/Button";
 
-import "./styles.css";
+import { CounterProps } from "./types";
+import { CounterWrapper, ButtonControl, Count } from "./styles";
 
-import Button from "../Button/Button";
-
-function Counter({ count, onMinus, onPlus }: CounterProbs) {
-  // Создаем state для likes
-  const [likes, setLikes] = useState<number>(0);
-  // Создаем state для dislikes
-  const [dislikes, setDislikes] = useState<number>(0);
-
-  // Создаем функцию, которая будет увеличивать likes на 1
-  const onLike = () => {
-    setLikes((prevValue) => {
-      return prevValue + 1;
-    });
-  };
-
-  // Создаем функцию, которая будет увеличивать dislikes на 1
-  const onDislike = () => {
-    setDislikes((prevValue) => prevValue + 1);
-  };
-
-  // Создаем функцию, которая будет сбрасывать все результаты
-  const resetResults = () => {
-    setLikes(0);
-    setDislikes(0);
-  };
-
+function Counter({ count, onMinus, onPlus }: CounterProps) {
   return (
-    <div className="counter-wrapper">
-      <div className="button-control">
+    <CounterWrapper>
+      <ButtonControl>
         <Button name="-" onClick={onMinus} />
-      </div>
-      <p className="count">{count}</p>
-      <div className="button-control">
+      </ButtonControl>
+      <Count>{count}</Count>
+      <ButtonControl>
         <Button name="+" onClick={onPlus} />
-      </div>
-    </div>
+      </ButtonControl>
+    </CounterWrapper>
   );
 }
 

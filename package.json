@@ -1,5 +1,5 @@
 {
-  "name": "typescript-cohort33",
+  "name": "cohort33-react-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -44,7 +44,6 @@
     ]
   },
   "devDependencies": {
-    "@types/uuid": "^9.0.8",
-    "prettier": "3.2.5"
+    "@types/uuid": "^9.0.8"
   }
 }

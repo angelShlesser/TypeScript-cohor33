@@ -1,12 +1,13 @@
 import {
-  PageTitle,
-  Lesson22Wrapper,
-  ButtonControl,
   ContainerWrapper,
   BlueContainer,
   RedContainer,
-  GreedContainer,
+  GreenContainer,
+  ButtonConrol,
+  Lesson22Wrapper,
+  PageTitle,
 } from "./styles";
+// import Button from "../../components/Button/Button";
 import Button from "components/Button/Button";
 
 function Lesson22() {
@@ -17,24 +18,16 @@ function Lesson22() {
   return (
     <Lesson22Wrapper>
       {/* <p style={{color: 'blue', fontSize: "30px"}}>Lesson 22</p> */}
-      {/* Заголовок страницы с цветом, зависящим от условия isRed */}
-      <PageTitle isRed={true}>Lesson 22</PageTitle>
-
-      {/* Контрольные блоки с кнопками */}
-      <ButtonControl>
-        <Button name="Enter" type="button" />
-      </ButtonControl>
-      <ButtonControl>
-        <Button name="Delete" type="button" isRed={true} />
-      </ButtonControl>
-
-      {/* Обертка для контейнеров разных цветов */}
+      <PageTitle isRed={false}>Lesson 22</PageTitle>
+      <ButtonConrol>
+        <Button type="button" name="Send" />
+      </ButtonConrol>
+      <ButtonConrol>
+        <Button type="button" isRed={true} name="Delete" />
+      </ButtonConrol>
       <ContainerWrapper>
-        {/* Зеленый контейнер */}
-        <GreedContainer>Green</GreedContainer>
-        {/* Красный контейнер */}
+        <GreenContainer>Green</GreenContainer>
         <RedContainer>Red</RedContainer>
-        {/* Синий контейнер */}
         <BlueContainer>Blue</BlueContainer>
       </ContainerWrapper>
     </Lesson22Wrapper>
