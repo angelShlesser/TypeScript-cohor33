@@ -1,33 +1,34 @@
-import "./styles.css";
-
-// import normalizeFirstLastName, { profile } from "./data";
 import { ProfileCardProps } from "./types";
 
-// Что такое props - это обьект, через котроый вы можете передавать данные от родителя - ребенку
-function ProfileCard({ profileData, imgSrc, children }: ProfileCardProps) {
-  console.log(profileData);
-  // К нам пришли данные с сервера
+import {
+  ProfileCardContainer,
+  ProfileAvatar,
+  AvatarControl,
+  FirstLastName,
+  ProfileCardInfo,
+} from "./styles";
 
-  // JSX: Передача html кода переменной
-  // const cardName = <h1>User info</h1>;
-
+function ProfileCard({
+  profileData,
+  imgSrc,
+  children = <h1>User Card</h1>,
+}: ProfileCardProps) {
   const normalizeFirstLastName = () => {
     return `${profileData.firstName} ${profileData.lastName}`;
   };
 
   return (
-    <div className="profile-card">
+    <ProfileCardContainer>
       {children}
-      <div className="avatar-control">
-        <img className="profile-avatar" alt="Profile Avatar" src={imgSrc} />
-      </div>
-      <h2>{normalizeFirstLastName()}</h2>
-      <p>Career: {profileData.career}</p>
-      <p>Hair Color: {profileData.hairColor}</p>
-      <p>Hobby: {profileData.hobby}</p>
-    </div>
+      <AvatarControl>
+        <ProfileAvatar alt="Profile Avatar" src={imgSrc} />
+      </AvatarControl>
+      <FirstLastName>{normalizeFirstLastName()}</FirstLastName>
+      <ProfileCardInfo>Career: {profileData.career}</ProfileCardInfo>
+      <ProfileCardInfo>Hair Color: {profileData.hairColor}</ProfileCardInfo>
+      <ProfileCardInfo>Hobby: {profileData.hobby}</ProfileCardInfo>
+    </ProfileCardContainer>
   );
 }
 
-// 3 cпособ экспорта - как default
 export default ProfileCard;
