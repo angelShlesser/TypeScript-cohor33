@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import {Container, Homework24Wrapper, ErrorParagraph} from "./style"
+import {Container, Homework24Wrapper, ErrorParagraph, Title, JokeText, GlobalStyles} from "./styles"
+import Button from "components/Button/Button";
+import { Global } from "@emotion/react";
 
 interface Joke {
   setup: string;
@@ -44,17 +46,23 @@ function Homework24() {
   }, [joke, error]);
 
   return (
-  <Homework24Wrapper>
-      <h2>Random Joke</h2>
-      {error && <ErrorParagraph>{error}</ErrorParagraph>}
-      {joke && (
-        <Container>
-          <p>{joke.setup}</p>
-          <p>{joke.punchline}</p>
-        </Container>
-      )}
-      <button onClick={handleButtonClick}>Получить новую шутку</button>
-    </Homework24Wrapper>
+    <>
+      {/* Применяем глобальные стили к корневому элементу компонента */}
+      <Global styles={GlobalStyles} />
+
+      {/* Остальные компоненты с использованием стилей */}
+      <Homework24Wrapper>
+        <Title>Random Joke</Title>
+        {error && <ErrorParagraph>{error}</ErrorParagraph>}
+        {joke && (
+          <Container>
+            <JokeText>{joke.setup}</JokeText>
+            <JokeText>{joke.punchline}</JokeText>
+          </Container>
+        )}
+        <Button name="Get a new joke" onClick={handleButtonClick} />
+      </Homework24Wrapper>
+    </>
   );
 };
 
