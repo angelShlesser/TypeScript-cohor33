@@ -3,7 +3,7 @@ import GlobalStyles from "styles/GlobalStyles";
 // Lessons
 import Lesson20 from "lessons/Lesson20/Lesson20";
 import Lesson21 from "lessons/Lesson21/Lesson21";
-import Lesson22 from "lessons/Lessons22/Lesson22";
+import Lesson22 from "lessons/Lesson22/Lesson22";
 import Lesson23 from "lessons/Lesson23/Lesson23";
 import Lesson24 from "lessons/Lesson24/Lesson24";
 
