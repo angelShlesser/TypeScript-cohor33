@@ -2,11 +2,7 @@ import { useState, useEffect } from "react";
 import {Container, Homework24Wrapper, ErrorParagraph, Title, JokeText, GlobalStyles} from "./styles"
 import Button from "components/Button/Button";
 import { Global } from "@emotion/react";
-
-interface Joke {
-  setup: string;
-  punchline: string;
-}
+import {Joke} from "./type"
 
 function Homework24() {
   const [joke, setJoke] = useState<Joke | null>(null);
