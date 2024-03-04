@@ -1,4 +1,4 @@
 export interface Joke {
-    setup: string;
-    punchline: string;
-  }
+  setup: string;
+  punchline: string;
+}
