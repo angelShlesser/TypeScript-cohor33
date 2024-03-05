@@ -9,7 +9,7 @@ const globalStyles = css`
 
   body,
   html {
-    font-family: "Montserrat", sans-serif; /* Устанавливает шрифт Montserrat для всего тела документа */
+    //font-family: "Montserrat", sans-serif; /* Устанавливает шрифт Montserrat для всего тела документа */
     height: 100%;
     margin: 0;
     padding: 0;
