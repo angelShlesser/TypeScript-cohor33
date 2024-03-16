@@ -16,10 +16,11 @@ function Input({
   value,
   onChange,
   error,
+  isWhite = false,
 }: InputProps) {
   return (
     <InputContainer>
-      <InputLabel htmlFor={id}>{label}</InputLabel>
+      {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
       <InputComponent
         value={value}
         onChange={onChange}
@@ -28,6 +29,7 @@ function Input({
         disabled={disabled}
         placeholder={placeholder}
         type={type}
+        isWhite={isWhite}
       />
       {/* {!!error && <ErrorContainer>{error}</ErrorContainer>} */}
       <ErrorContainer>{error}</ErrorContainer>

@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+interface InputComponentProps {
+  isWhite?: boolean;
+}
+
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,19 +17,20 @@ export const InputLabel = styled.label`
   color: #6f6f6f;
 `;
 
-export const InputComponent = styled.input`
+export const InputComponent = styled.input<InputComponentProps>`
   width: 100%;
   height: 50px;
   padding: 12px;
   outline: none;
-  border: 1px solid black;
+  border: ${({ isWhite }) => (isWhite ? "1px solid white" : "1px solid black")};
   border-radius: 4px;
   font-size: 16px;
   background-color: ${({ disabled }) =>
     disabled ? "lightgrey" : "transparent"};
+  color: ${({ isWhite }) => (isWhite ? "white" : "black")};
 
   &::placeholder {
-    color: #6f6f6f;
+    color: ${({ isWhite }) => (isWhite ? "white" : "#6f6f6f")};
   }
 
   &:hover {

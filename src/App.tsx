@@ -9,6 +9,7 @@ import About from "pages/About/About";
 import Users from "pages/Users/Users";
 import Clients from "pages/Clients/Clients";
 import { Apple, Facebook, Sega } from "pages/Clients/components";
+import Weather from "pages/Weather/Weather";
 
 // Lessons
 import Lesson20 from "lessons/Lesson20/Lesson20";
@@ -26,6 +27,7 @@ import Homework22 from "homeworks/Homework22/Homework22";
 import Homework23 from "homeworks/Homework23/Homework23";
 import Homework24 from "homeworks/Homework24/Homework24";
 import Homework25 from "homeworks/Homework25/Homework25";
+import Homework27 from "homeworks/Homework27/Homework27";
 
 function App() {
   return (
@@ -49,6 +51,7 @@ function App() {
       {/* <Lesson23 /> */}
       {/* <Lesson24 /> */}
       {/* <Lesson25 /> */}
+      {/* <Lesson27 /> */}
       <Lesson27 />
       {/* <Homework20 /> */}
       {/* <Homework21 /> */}
@@ -56,6 +59,8 @@ function App() {
       {/* <Homework23 /> */}
       {/* <Homework24 /> */}
       {/* <Homework25 /> */}
+      {/* <Homework27 /> */}
+      <Weather />
     </BrowserRouter>
   );
 }

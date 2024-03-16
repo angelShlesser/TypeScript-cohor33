@@ -5,9 +5,10 @@ export interface InputProps {
   name: string;
   disabled?: boolean;
   placeholder: string;
-  label: string;
+  label?: string;
   type?: string;
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   error?: undefined | string;
+  isWhite?: boolean;
 }
